@@ -1,7 +1,10 @@
 package histoire;
 
+import java.awt.Robot;
+
 import personnage.Commerçant;
 import personnage.Humain;
+import personnage.Ronin;
 import personnage.Yakuza;
 
 public class HistoireTP4 {
@@ -24,6 +27,9 @@ public class HistoireTP4 {
 		yakuLeNoir.direBonjour();
 		yakuLeNoir.extorquer(marco);
 		
+		Ronin roro = new Ronin("Roro", "shochu", 100);
+		roro.direBonjour();
+		roro.donner(marco);
 		
 	}
 
