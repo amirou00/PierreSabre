@@ -7,12 +7,23 @@ public class Ronin extends Humain {
 		super(nom, boissonFavorite, argent);
 	}
 	
-	public void donner(Commerçant beneficiaire) {
+	public void donner(Commercant beneficiaire) {
 		int argentADonner = argent/10;
-		System.out.println(parler(beneficiaire.getNom() + " prend ces 6 sous."));
+		parler(beneficiaire.getNom() + " prend ces 6 sous.");
 		beneficiaire.recevoir(argentADonner);
 	}
 	
-	
+	public void provoquer(Yakuza adversaire) {
+		parler("Je t'ai retrouvé vermine, tu vas payer pour ce que tu as fait à ce pauvre marchand! ");
+		if(honneur >= adversaire.getReputation()) {
+			parler("Je t’ai eu petit yakusa!");
+			int argentBagarre = adversaire.perdre();
+			gagnerArgent(argentBagarre);
+		}
+		else {
+			parler("J'ai perdu contre ce yakuza, mon honneur et ma bourse ont en pris un coup.");
+			adversaire.gagner(argent);
+		}
+	}
 
 }
