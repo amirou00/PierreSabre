@@ -8,7 +8,8 @@ public class Ronin extends Humain {
 	}
 	
 	public void donner(Commercant beneficiaire) {
-		int argentADonner = argent/10;
+		int argentADonner = getArgent()/10;
+		perdreArgent(argentADonner);
 		parler(beneficiaire.getNom() + " prend ces 6 sous.");
 		beneficiaire.recevoir(argentADonner);
 	}
@@ -22,7 +23,7 @@ public class Ronin extends Humain {
 		}
 		else {
 			parler("J'ai perdu contre ce yakuza, mon honneur et ma bourse ont en pris un coup.");
-			adversaire.gagner(argent);
+			adversaire.gagner(getArgent());
 		}
 	}
 

@@ -1,7 +1,5 @@
 package histoire;
 
-import java.awt.Robot;
-
 import personnage.Commercant;
 import personnage.Humain;
 import personnage.Ronin;
